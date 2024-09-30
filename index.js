@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const port = 5000;
+const port = 5000||process.env.PORT;
 
 // Middleware
 app.use(bodyParser.json());
