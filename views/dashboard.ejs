@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Tracker Dashboard</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/style.css"> <!-- Link to the custom stylesheet -->
+</head>
+<body>
+  <div class="custom-container">
+    <h1 class="custom-header">Activity Tracker Dashboard</h1>
+    
+    <div class="table-responsive custom-table">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>URL</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Duration (seconds)</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% activities.forEach(activity => { %>
+            <tr>
+              <td><%= activity.url %></td>
+              <td><%= activity.startTime.toISOString() %></td>
+              <td><%= activity.endTime.toISOString() %></td>
+              <td><%= activity.duration %></td>
+              <td><%= activity.count %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
